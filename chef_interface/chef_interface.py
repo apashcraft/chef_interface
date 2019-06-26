@@ -1,3 +1,4 @@
+"""Provides an object for interacting with the Chef API"""
 from chef import api
 import json
 from pathlib import Path
@@ -10,7 +11,7 @@ disable_warnings(InsecureRequestWarning)
 
 
 class ChefAPI:
-
+    """This class provides an object for interacting with the Chef API"""
     def __init__(self):
         self.data_path = Path('data/')
         self.auth()
@@ -20,6 +21,7 @@ class ChefAPI:
 
     def auth(self):
         pem = str(self.data_path / 'username.pem')
+        # Uses PyChef for authentication
         self.chef_server = api.ChefAPI(
             'server', pem,
             'username',

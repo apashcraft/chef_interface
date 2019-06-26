@@ -1,8 +1,11 @@
+"""Used to demonstrate the functionality of the chef_interface.py module"""
 from chef_interface.chef_interface import ChefAPI
 import json
 from tools.tools import Tools
 
+
 def main():
+    """Demonstrates different methods available within the Chef Interface"""
     chef = ChefAPI()
     chef.auth()
     tool_bag = Tools()
